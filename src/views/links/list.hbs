@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row mt-4">
+        {{#each links}}
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <div class="card-header bg-dark text-white">
+                        <h5 class="card-title d-flex justify-content-between align-items-center">
+                            {{title}}
+                            <a href="/links/update/{{id}}" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <a href="{{url}}" class="text-uppercase">{{title}}:</a>
+                        <p>{{description}}</p>
+                        <p>{{timeago created_at}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="/links/delete/{{id}}" class="btn btn-danger btn-block">Delete</a>
+                    </div>
+                </div>
+            </div>
+        {{else}}
+            <div class="col-md-4 mx-auto text-center">
+                <div class="card">
+                    <div class="card-body">
+                        <p>There are not links saved yet</p>
+                <a href="/links/add" class="btn btn-primary">Create One</a>
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>
